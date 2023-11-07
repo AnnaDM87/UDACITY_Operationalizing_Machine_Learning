@@ -23,10 +23,64 @@ I used the udacity virtual machine. I skipped this part because I am not allowed
 * As requested, I chose the Standard_DS12_V2 for the virtual machine, 1 minimum number of nodes.
 * The experiment type was classification.
 * The best model for this classification was Voting Ensemble.
-![benchamrk](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/bankmarketing_dataset.png?raw=true)
+“Registered Datasets” in ML Studio shows "Bankmarketing" dataset available
+![benchamrk](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/bankmarketing_dataset_renamed_as_bank_train.png?raw=true)
+
+Best model screenshot
+![bestmodel](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/assets/22540529/107f9569-faa0-47c9-94c0-3f9569e557c1)
+The experiment is shown as completed
+![experiment_complete](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/automated_experiment_complted.png?raw=true)
+
+### Deploy the model
+* We deployed our trained Voting Ensemble model using Azure Container Instance (ACI), with authentication enabled.
+
+Deploy model with authentication enabled
+![deploymodel](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/deploy_model.png?raw=true)
+
+ Endpoints ready
+ ![endopoints](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/endpoints.png?raw=true)
+### Enable logging
+Enabling Application Insights and Logs could have been done at the time of deployment, but for this project we achieved it using Azure Python SDK.
+  
+  Logging is enabled by running the provided logs.py script
+  ![logspy1](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/logspy_screenshot.png?raw=true)
+
+
+  ![logspy2](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/logspy_screenshot2.png?raw=true)
+  
+  Endpoints section in Azure ML Studio, showing that “Application Insights enabled” says “true”.
+ ![ensemble_true](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screenshot/auto_ml_ensemble_true.png?raw=true)
+### Swagger Documentation
+To consume our best AutoML model using Swagger, we first need to download the swagger.json file provided to us in the Endpoints section of Azure Machine Learning Studio.
+
+Then we run the swagger.sh and serve.py files to be able to interact with the swagger instance running with the documentation for the HTTP API of the model.
+Swagger runs on localhost showing the HTTP API methods and responses for the model
+![swagger](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/automl_swagger.png?raw=true)
+### Consume model endpoints
+We provided the scoring_uri and key to endpoint.py script and running it. 
+
+endpoint.py script runs against the API producing JSON output from the model.
+![endpoint.py](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/swagger_json.png?raw=true)
+### Benchmark
+We run the file bencmark.sh to load tes our model
+Apache Benchmark (ab) runs against the HTTP API using authentication keys to retrieve performance results. (optional)
+![bench1](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/bench_mark1.png?raw=true)
+![bench2](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/benchmark2.png?raw=true)
+### Create and publish a pipeline
+We used a jupyter notebook to create, consume and publish the best model for the same dataset we already used. 
+The pipeline section of Azure ML studio, showing that the pipeline has been created
+![pipeline](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/pipeline_creation.png?raw=true)
+
+The Bankmarketing dataset with the AutoML module
+![pipeline2](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/pipeline_endpoint_2.png?raw=true)
+The “Published Pipeline overview”, showing a REST endpoint and a status of ACTIVE
+![pipeline_active](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/pipeline_active.png?raw=true)
+
+Rest endpoint with status active
+![restednpoint](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/published_pipeline.png?raw=true)
+
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+Because of company policy I cannot send a screencast
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
