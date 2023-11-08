@@ -70,7 +70,8 @@ Apache Benchmark (ab) runs against the HTTP API using authentication keys to ret
 We used a jupyter notebook to create, consume and publish the best model for the same dataset we already used. 
 The pipeline section of Azure ML studio, showing that the pipeline has been created
 ![pipeline](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/pipeline_creation.png?raw=true)
-
+*ipeline status in notebook
+![notebook](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/Immagine2.png?raw=true)
 The Bankmarketing dataset with the AutoML module
 ![pipeline2](https://github.com/AnnaDM87/UDACITY_Operationalizing_Machine_Learning/blob/main/starter_files/screensho2/pipeline_endpoint_2.png?raw=true)
 The “Published Pipeline overview”, showing a REST endpoint and a status of ACTIVE
@@ -81,6 +82,12 @@ Rest endpoint with status active
 
 
 ## Screen Recording
-Because of company policy I cannot send a screencast
+I cannot record the voice screen cast. Following you can find the text description:
+[00:00-00:04] From the home page in azure ml studio, I select the Automated ML. 
+[00:05-00:07] Selecting it, the Automated ML page open. There are two experiments. One was aborted. I select the completed one.
+[00:08-00:18] The job page opens and I cane all the details about it, also the best model and the accuracy metric value
+[00:19-00:32] Now, I select the endpoints. When I can see the deployed model.The application isneghts were enabled.
+[00:33:00:55] Now I select the Pipeline. Again I select a successful pipeline. Selecting the pipelin, I can see all the details about the pipeline itself.
+[00:56-01:14] I go aback to Pipeline section and select the pipeline endopoints tab. In this section I can see the rest endpoin details about the pipeline.
 
 
